@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>게시글 상세 페이지</title>
+    <title th:text="게시글"></title>
+    <link rel='stylesheet' href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-
-<h1 th:text="${board.title}"></h1>
-<p th:text="${board.content}"></p>
-<a th:href="@{/board/delete(id=${board.id})}">글 삭제</a>
-<a th:href="@{/board/modify/{id}(id=${board.id})}">수정</a>
+<header th:insert="common/header.html"></header>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" th:text="@{${board.title}}"></h5>
+        </div>
+    </div>
+</div>
+    <h1 th:text="${board.title}"></h1>
+    <p th:text="${board.content}"></p>
+    <a th:href="@{/board/delete(id=${board.id})}">글 삭제</a>
+    <a th:href="@{/board/modify/{id}(id=${board.id})}">수정</a>
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
