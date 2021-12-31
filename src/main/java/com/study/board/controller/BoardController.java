@@ -22,10 +22,8 @@ public class BoardController {
 
     @PostMapping("/board/writepro")
     public String boardWritePro(Board board) {
-
         boardService.write(board);
-
-        return "boardlist";
+        return "redirect:/board/list";
     }
 
     @GetMapping("/board/list")
@@ -58,6 +56,8 @@ public class BoardController {
         boardTemp.setTitle(board.getTitle());
         boardTemp.setContent(board.getContent());
 
-        return "redirect/board/list";
+        boardService.write(boardTemp);
+
+        return "redirect:/board/list";
     }
 }
