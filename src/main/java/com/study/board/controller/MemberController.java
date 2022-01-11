@@ -11,8 +11,8 @@ public class MemberController {
     @Autowired
     private MemberRepository memberRepository;
 
-    @RequestMapping("/")
-    public String login(){
-        return "login";
-    }
+    //@RequestMapping("/")
+    //public String login(){
+    //    return "login";
+    //}
 }
